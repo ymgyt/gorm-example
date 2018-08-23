@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  db:
+    build:
+      context: containers/mysql
+    image: gorm-example-db
+    container_name: gorm-example-db
+    ports:
+      - 3333:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: gopher
+    restart: always
